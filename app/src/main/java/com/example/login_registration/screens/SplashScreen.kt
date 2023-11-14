@@ -37,7 +37,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.example.login_registration.R
+import com.example.login_registration.Routes
 import com.example.login_registration.components.BoldText
+import com.example.login_registration.components.CustomDivider
 import com.example.login_registration.components.LightText
 import com.example.login_registration.ui.theme.buttonColor
 import com.example.login_registration.ui.theme.textColor
@@ -81,7 +83,9 @@ fun SplashScreen(
         Spacer(modifier = Modifier.height(60.dp))
 
         Button(
-            onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(
+            onClick = {
+                      navController.navigate(Routes.SignInScreen.route)
+            }, colors = ButtonDefaults.buttonColors(
                 containerColor = textColor
             ),
             modifier = Modifier.size(200.dp, 55.dp)
@@ -92,7 +96,9 @@ fun SplashScreen(
         Spacer(modifier = Modifier.height(10.dp))
 
         Button(
-            onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(
+            onClick = {
+                      navController.navigate(Routes.SignUpScreen.route)
+            }, colors = ButtonDefaults.buttonColors(
                 containerColor = buttonColor
             ),
             border = BorderStroke(2.dp, textColor),
@@ -105,11 +111,7 @@ fun SplashScreen(
             )
         }
 
-        Divider(
-            color = textColor, modifier = Modifier
-                .alpha(.3f)
-                .padding(start = 30.dp, end = 30.dp, top = 30.dp)
-        )
+        CustomDivider()
 
         Row(
             horizontalArrangement = Arrangement.SpaceEvenly,
