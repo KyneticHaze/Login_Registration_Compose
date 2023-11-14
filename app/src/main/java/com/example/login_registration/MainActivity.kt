@@ -13,6 +13,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.login_registration.screens.SignInScreen
+import com.example.login_registration.screens.SignUpScreen
 import com.example.login_registration.screens.SplashScreen
 import com.example.login_registration.ui.theme.Login_RegistrationTheme
 import com.example.login_registration.ui.theme.surfaceColor
@@ -33,10 +35,10 @@ class MainActivity : ComponentActivity() {
                             SplashScreen(navController = navController)
                         }
                         composable(Routes.SignInScreen.route) {
-
+                            SignInScreen(navController = navController)
                         }
                         composable(Routes.SignUpScreen.route) {
-
+                            SignUpScreen(navController = navController)
                         }
                     }
                 }
